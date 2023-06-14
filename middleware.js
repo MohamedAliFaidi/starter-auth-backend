@@ -4,7 +4,7 @@ const User = require("./Models/User");
 async function authenticated(req, res, next) {
   try {
     const Token = req.headers.cookie?.split("=")[1];
-    const decoded = jwt.verify(Token, "ukdagfukyegfyGWEWTQ4784238472987432")
+    const verified= jwt.verify(Token, "ukdagfukyegfyGWEWTQ4784238472987432")
     const user = await User.findOne({ email: verified.email });
     if (!Token)
     {

@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 connectDB();
 
-app.use("/post", authenticated , postRouter);
+app.use("/post" , authenticated, postRouter);
 app.use("/auth", userRouter)
 
 app.listen(port, () => {

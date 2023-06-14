@@ -4,7 +4,7 @@ const cors = require("cors");
 const connectDB = require("./db.connect");
 const bodyParser = require("body-parser");
 const app = express();
-const port = 8080;
+const port = 5500;
 const postRouter = require("./Routes/post");
 const userRouter = require("./Routes/auth");
 const { authenticated } = require('./middleware');
@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 connectDB();
 
-app.use("/post", authenticated , postRouter);
+app.use("/post" , authenticated, postRouter);
 app.use("/auth", userRouter)
 
 app.listen(port, () => {

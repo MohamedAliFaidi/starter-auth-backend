@@ -14,12 +14,13 @@ addPost = async (req, res) => {
   }
 };
 
-async function getAllPosts  (req, res) {
+const getAllPosts = async (req, res)=> {
   try {
     const posts = await Post.find();
-  return   res.status(200).json(posts);
+     res.status(200).send(posts);
   } catch (error) {
-     console.log(error )
+     console.log(error)
+     
   }
 };
 

@@ -19,7 +19,6 @@ const getAllPosts = async (req, res)=> {
     const posts = await Post.find();
      res.status(200).send(posts);
   } catch (error) {
-     console.log(error)
      
   }
 };

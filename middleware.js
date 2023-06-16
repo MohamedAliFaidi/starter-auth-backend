@@ -1,6 +1,8 @@
 const jwt = require("jsonwebtoken");
 const User = require("./Models/User");
 
+//authorization="Eqweqweqweqweqweqweqwe"
+
 async function authenticated(req, res, next) {
   try {
     const Token = req.headers.cookie?.split("=")[1];
@@ -26,7 +28,6 @@ async function authenticated(req, res, next) {
   }
   } catch (error) {
 res.status(401).send({message:"unauthorized"})  }
-
   next();
 }
 
